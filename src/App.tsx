@@ -1,25 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { makeStyles } from '@material-ui/core/styles';
+import { Container, Paper, FormControlLabel, Checkbox, Typography, TextField } from '@material-ui/core';
+import MiniFormik from './component/MiniFormik';
+
+const useStyles = makeStyles((theme) => ({
+  container: {
+    marginTop: theme.spacing(3)
+  },
+  paper: {
+    padding: theme.spacing(2, 4)
+  }
+}))
 
 function App() {
+  const classes = useStyles();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <MiniFormik initialValues={{
+        isGoing: true,
+        numberOfGuests: 2
+      }}>
+        {({ values }) => <Container maxWidth="md" className={classes.container}>
+          <Paper className={classes.paper}>
+            <form>
+              <FormControlLabel
+                control={<Checkbox value="allowExtraEmails" color="primary" name="isGoing" checked={values.isGoing} />}
+                label="Check box"
+              />
+              <Typography component="h1" variant="h5">Number of guests</Typography>
+              <TextField defaultValue={1} value={values.numberOfGuests} fullWidth type="number" name="numberOfGuests" />
+            </form>
+          </Paper>
+        </Container>}
+      </MiniFormik>
+
+    </div >
   );
 }
 
