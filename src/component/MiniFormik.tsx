@@ -4,7 +4,8 @@ type ValueChild = boolean | string | number;
 
 type ParamChild = {
     values: {
-        [name: string] : ValueChild
+        [name: string] : ValueChild,
+        isGoing: boolean
     },
     handleChange: (event: any) => void
 }
@@ -12,7 +13,8 @@ type ParamChild = {
 interface Props {
     children: ({ values }: ParamChild) => JSX.Element,
     initialValues: {
-        [nameValue: string]: ValueChild
+        [nameValue: string]: ValueChild,
+        isGoing: boolean,
     }
 }
 
