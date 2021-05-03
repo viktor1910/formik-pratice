@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import useCustomFormik from '../hook/useCustomFormik';
 import { makeStyles } from '@material-ui/core/styles';
-import { Container, Paper, FormControlLabel, Checkbox, Typography, TextField } from '@material-ui/core';
+import { Container, Paper, Checkbox, Typography, TextField } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     container: {

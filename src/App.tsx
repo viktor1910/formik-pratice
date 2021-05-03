@@ -1,13 +1,12 @@
 import React from 'react';
-import FomikPractive from './page/FomikPractive';
-import FormikUseField from './page/FormikUseField';
+// import FomikPractive from './page/FomikPractive';
+// import FormikUseField from './page/FormikUseField';
+import FormikWithMaterialUI from './page/FormikWithMaterialUI'
 
 function App() {
   return (
     <div className="App">
-      {/* <CustomMiniFormikHook /> */}
-      <FomikPractive />
-      <FormikUseField />
+      <FormikWithMaterialUI />
     </div >
   );
 }
