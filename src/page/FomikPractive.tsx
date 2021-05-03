@@ -4,11 +4,11 @@ import { Container, Paper, TextField, Button, Typography } from '@material-ui/co
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-type ValidateForm = {
-    firstname: string,
-    lastname: string,
-    email: string
-}
+// type ValidateForm = {
+//     firstname: string,
+//     lastname: string,
+//     email: string
+// }
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -19,28 +19,28 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-const validate = (values: ValidateForm): ValidateForm => {
-    const errors = {} as ValidateForm;
-    if (!values.firstname) {
-        errors.firstname = 'Required'
-    } else if (values.firstname.length > 15) {
-        errors.firstname = "Must be 15 charactors or less"
-    }
+// const validate = (values: ValidateForm): ValidateForm => {
+//     const errors = {} as ValidateForm;
+//     if (!values.firstname) {
+//         errors.firstname = 'Required'
+//     } else if (values.firstname.length > 15) {
+//         errors.firstname = "Must be 15 charactors or less"
+//     }
 
-    if (!values.lastname) {
-        errors.lastname = 'Required'
-    } else if (values.lastname.length > 15) {
-        errors.lastname = "Must be 15 charactors or less"
-    }
+//     if (!values.lastname) {
+//         errors.lastname = 'Required'
+//     } else if (values.lastname.length > 15) {
+//         errors.lastname = "Must be 15 charactors or less"
+//     }
 
-    if (!values.email) {
-        errors.email = 'Required'
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-        errors.email = "Must be 15 charactors or less"
-    }
+//     if (!values.email) {
+//         errors.email = 'Required'
+//     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+//         errors.email = "Must be 15 charactors or less"
+//     }
 
-    return errors;
-}
+//     return errors;
+// }
 
 
 const FomikPractive = () => {
